@@ -1,7 +1,7 @@
 #!/bin/bash
 #1 获取输入参数个数，如果没有参数，直接退出
 pcount=$#
-if((pcount==0)); then
+if ((pcount==0)); then
     echo "请输入 文件名"
     exit;
 fi
