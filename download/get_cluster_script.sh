@@ -11,5 +11,9 @@ JPS="https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/WangJiu-c
 wget -q -P $HADOOP_HOME/bin $JPS -O $HADOOP_HOME/bin/jpsall
 chmod +x $HADOOP_HOME/bin/jpsall
 
+
+MyHadoop="https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/bigdata-shell/main/init/myhadoop.sh"
+wget -q -P $HADOOP_HOME/bin $MyHadoop -O $HADOOP_HOME/bin/myhadoop.sh
+chmod +x $HADOOP_HOME/bin/myhadoop.sh
 printf "\n"
 echo "==============================ok=============================================="
