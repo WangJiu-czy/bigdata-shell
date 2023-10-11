@@ -1,7 +1,20 @@
-wget -L -qO -  'https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/WangJiu-czy/main/init/install-zk.sh'
+source /etc/profile 
+printf "\n"
+source ~/.bashrc 
+printf "\n"
+
+if [ -d $ZOOKEEPER_HOME ]; then
+
+mkdir -p $ZOOKEEPER_HOME/data && echo "1" > $ZOOKEEPER_HOME/data/myid
+mv $ZOOKEEPER_HOME/conf/zoo_sample.cfg  $ZOOKEEPER_HOME/conf/zoo.cfg
+sed -i "s,/tmp/zookeeper,$ZOOKEEPER_HOME/data,g" $ZOOKEEPER_HOME/conf/zoo.cfg
+
 ZK_URL="https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/WangJiu-czy/main/init/conf/zookeeper/zk"
 wget -P $ZOOKEEPER_HOME/bin $ZK_URL -O $ZOOKEEPER_HOME/bin/zk
 chmod +x $ZOOKEEPER_HOME/bin/zk
 echo "server.1=master:2888:3888" >> $ZOOKEEPER_HOME/conf/zoo.cfg
 echo "server.2=slave1:2888:3888" >> $ZOOKEEPER_HOME/conf/zoo.cfg
 echo "server.3=slave2:2888:3888" >> $ZOOKEEPER_HOME/conf/zoo.cfg
+echo "=================加载zk集群启动脚本完成==========================="
+fi
+
