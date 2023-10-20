@@ -4,7 +4,7 @@ source ~/.bashrc
 
 Link="https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/bigdata-shell/main/init/xsync"
 
-wget -q -P $HADOOP_HOME/bin $Link -O $HADOOP_HOME/bin/xsync --no-check-certificatev
+wget -q -P $HADOOP_HOME/bin $Link -O $HADOOP_HOME/bin/xsync --no-check-certificate
 chmod +x $HADOOP_HOME/bin/xsync
 
 JPS="https://ghproxy.com/https://raw.githubusercontent.com/WangJiu-czy/WangJiu-czy/main/init/conf/jpsall" 
