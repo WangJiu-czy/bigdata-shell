@@ -1,0 +1,19 @@
+#!/bin/bash
+case $1 in
+"start"){
+	for i in hadoop1 hadoop2 hadoop3
+	do 
+		 echo ------------- $i kafka 启动 ---------------------------
+		ssh $i "source /etc/profile && kafka-server-start.sh -daemon $KAFKA_HOME/config/server.properties  && jps"
+	done
+}
+;;
+"stop"){
+	for i in hadoop1 hadoop2 hadoop3
+	do
+		echo ---------------- $i kafka 停止 ---------------------------
+		ssh $i "source /etc/profile &&  kafka-server-stop.sh"
+	done
+}
+;;
+esac
